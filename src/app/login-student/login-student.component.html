@@ -1,0 +1,37 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon><a href="/home" style="color: white;">supervised_user_circle</a></mat-icon>
+    </button>
+    <span>Result Management System</span>
+</mat-toolbar>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class=" card-title text-center">
+                    <h1>Login</h1>
+                    <h4>Enter rollno and date of birth to login!</h4>
+
+                </div>
+                <form [formGroup]="loginForm" class="card-body" (ngSubmit)="login()">
+                    <div class="form-group">
+                      <label for="rollno">Roll No</label>
+                      <input  formControlName="rollno" type="email" class="form-control" id="rollno"  placeholder="Enter roll no">
+                      <span class="text-danger" *ngIf="loginForm.controls['rollno'].dirty && loginForm.hasError('required','rollno')">rollno  is Required</span>
+                      
+
+                    </div>
+                    <div class="form-group">
+                      <label for="dobfield">Date Of birth</label>
+                      <input  [class.is-invalid]="loginForm.controls['dob'].invalid && loginForm.controls['dob'].touched"  required minlength="6" formControlName="dob" type="date" class="form-control" id="dobfield"  min="1910-01-01" max="2018-12-31" max="{{date | date:'yyyy-MM-dd'}}" value="2000-01-01" >
+                      <span class="text-danger" *ngIf="loginForm.controls['dob'].dirty && loginForm.hasError('required','dob')">dob is Required</span>
+                      
+                    </div>
+              <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary">login</button>
+                  </form>
+                  <a class="router" routerLink="/home"> click to go to home page</a>
+
+            </div>
+        </div>
+    </div>
+</div>

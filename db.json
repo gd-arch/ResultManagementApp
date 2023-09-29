@@ -1,0 +1,69 @@
+{
+  "studentList": [
+    {
+      "rollNo": 113,
+      "studentName": "Bharath Narayan",
+      "dob": "1995-02-07T18:30:00.000Z",
+      "score": 253,
+      "id": 2
+    },
+    {
+      "rollNo": 52,
+      "studentName": "Amit dubey",
+      "dob": "2000-02-15T18:30:00.000Z",
+      "score": "221",
+      "id": 3
+    },
+    {
+      "rollNo": 9,
+      "studentName": "Suman kumari",
+      "dob": "2022-08-17T18:30:00.000Z",
+      "score": 600,
+      "id": 4
+    },
+    {
+      "rollNo": 2,
+      "studentName": "abhishek tiwari",
+      "dob": "2000-11-22T18:30:00.000Z",
+      "score": 650,
+      "id": 6
+    },
+    {
+      "rollNo": 3,
+      "studentName": "akshay nikhra",
+      "dob": "2000-04-13T18:30:00.000Z",
+      "score": 620,
+      "id": 7
+    }
+  ],
+  "signupusers": [
+    {
+      "fullName": "akash singh",
+      "email": "xyz@gmail.com",
+      "password": "abc@gmail.com",
+      "mobile": "9927514678",
+      "id": 1
+    },
+    {
+      "fullName": "Ajay akash singh",
+      "email": "abc@gmail.com",
+      "password": "abc@gmail.com",
+      "mobile": "9827514678",
+      "id": 2
+    },
+    {
+      "fullName": "sumit shukla",
+      "email": "sumit@abc.com",
+      "password": "12345678",
+      "mobile": "9827514634",
+      "id": 3
+    },
+    {
+      "fullName": "Anuj singh",
+      "email": "abcd@gmail.com",
+      "password": "abcd@gmail.com",
+      "mobile": "9827514522",
+      "id": 4
+    }
+  ]
+}

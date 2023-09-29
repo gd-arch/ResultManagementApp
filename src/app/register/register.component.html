@@ -1,0 +1,62 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon><a href="/home" style="color: white;">supervised_user_circle</a></mat-icon>
+  </button>
+  <span>Result Management System</span>
+</mat-toolbar>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Signup</h1>
+                    <h4>Register yourself!</h4>
+                </div>
+                <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input [class.is-invalid]="registerForm['fullName'].invalid && registerForm['fullName'].touched" formControlName="fullName" type="text" class="form-control" id="name"  placeholder="Enter full name">
+                        <!-- <span class="text-danger"  *ngIf="signUpForm.controls['fullName'].dirty && signUpForm.controls['fullName'].errors?.['required'] ">Name is required</span> -->
+                        <span class="text-danger" 
+                        *ngIf="!signUpForm.get('fullName')!.valid && signUpForm.get('fullName')!.touched">
+                      Please Enter valid name 
+                      </span>
+                      </div>
+                      <div class="form-group">
+                        <label for="mobile">Mobile No</label>
+                        <input  [class.is-invalid]="registerForm['mobile'].invalid && registerForm['mobile'].touched" autocomplete="off" formControlName="mobile"   type="tel" class="form-control" id="mobile"  placeholder="Enter mobile no">
+                        <!-- <span class="text-danger"  *ngIf="signUpForm.controls['mobile'].dirty && signUpForm.controls['mobile'].errors?.['required'] ">Mobile No is required</span>
+                        <div  class="text-danger" *ngIf="signUpForm.controls['mobile'].errors?.['mobile']">mobile no. must be valid </div> -->
+                        <span class="text-danger" 
+                      *ngIf="!signUpForm.get('mobile')!.valid && signUpForm.get('mobile')!.touched">
+                    Please Enter valid Mobile No
+                    </span>
+                      </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Email address</label>
+                      <input  [class.is-invalid]="registerForm['email'].invalid && registerForm['email'].touched"   formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                      <!-- <span class="text-danger" *ngIf="signUpForm.controls['email'].dirty && signUpForm.controls['email'].errors?.['required']">Email Id is Required</span>
+                      <div  class="text-danger" *ngIf="signUpForm.controls['email'].errors?.['email']">Email must be a valid email address</div> -->
+                      <span class="text-danger" 
+                      *ngIf="!signUpForm.get('email')!.valid && signUpForm.get('email')!.touched">
+                    Please Enter valid email
+                    </span>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Password</label>
+                      <input [class.is-invalid]="registerForm['password'].invalid && registerForm['password'].touched" formControlName="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                      <span class="text-danger"  *ngIf="signUpForm.controls['password'].dirty && signUpForm.controls['password'].errors?.['required'] ">Password is required</span>
+                      <div  class="text-danger" *ngIf="signUpForm.controls['password'].errors?.['minlength']">
+                        password must be at least 6 characters long.
+                      </div>
+                    </div>
+
+                
+    
+                    <button type="submit" [disabled]="!signUpForm.valid" class="btn btn-primary">Register</button>
+                  </form>
+                  <a class="router" routerLink="/login">Already registered? click to login</a>
+            </div>
+        </div>
+    </div>
+</div>

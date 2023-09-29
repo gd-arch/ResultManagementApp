@@ -1,0 +1,29 @@
+.card{
+    border:none ;
+    width: 500px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: rgb(218, 218, 218);
+    background: linear-gradient(90deg, rgb(20, 79, 196) 0%, rgb(83, 29, 201) 50%, rgb(95, 2, 152) 100%);
+
+}
+.card h1, h4,a{
+color: aliceblue;
+}
+label{
+    color: aliceblue;
+}
+div.form-group,button,div.form-check{
+    
+    margin-top: 15px;
+    
+}
+input{
+    margin-top: 5px;
+}
+a.router{
+    margin-top: 15px;
+}

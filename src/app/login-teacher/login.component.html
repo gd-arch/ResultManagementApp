@@ -1,0 +1,39 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon><a href="/home" style="color: white;">supervised_user_circle</a></mat-icon>
+  </button>
+  <span>Result Management System</span>
+</mat-toolbar>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Login</h1>
+                    <h4>Enter email and password to login!</h4>
+
+                </div>
+                <form [formGroup]="loginForm" (ngSubmit)="login()">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Email address</label>
+                      <input ngModel email formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                      <span class="text-danger" *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('required','email')">Email Id is Required</span>
+                      <div  class="text-danger" *ngIf="loginForm.controls['email'].errors?.['email']">Email must be a valid email address</div>
+
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Password</label>
+                      <input  [class.is-invalid]="loginForm.controls['password'].invalid && loginForm.controls['password'].touched"  required minlength="6" formControlName="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                      <span class="text-danger" *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')">Password is Required</span>
+                      <div  class="text-danger" *ngIf="loginForm.controls['password'].errors?.['minlength']">
+                        password must be at least 6 characters long.
+                      </div>
+                    </div>
+              <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary">login</button>
+                  </form>
+                  <a class="router" routerLink="/register">New User? click to register</a>
+
+            </div>
+        </div>
+    </div>
+</div>

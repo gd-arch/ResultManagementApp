@@ -1,0 +1,27 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon><a href="/home" style="color: white;">supervised_user_circle</a></mat-icon>
+  </button>
+  <span>Result Management System</span>
+  <span class="example-spacer"></span>
+  <button class="mx-2" mat-raised-button color="warn" (click)="logout()" >Logout</button>
+
+</mat-toolbar>
+<div class="container d-flex justify-content-center mt-5">
+
+    <div class="card text-center" style="width: 18rem;">
+      <div class="card-header">
+        Result
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Name : {{studentData.studentName}}</li>
+        <li class="list-group-item">Rollno:  {{studentData.rollNo}}</li>
+        <li class="list-group-item">DOB: {{studentData.dob.substring(0,10)  | date: 'dd-MM-yyyy'}}</li>
+        <li class="list-group-item">Total Score: {{studentData.score}}</li>
+        
+      </ul>
+    </div>
+   
+ 
+</div>
+

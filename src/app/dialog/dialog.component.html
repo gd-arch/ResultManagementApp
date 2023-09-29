@@ -1,0 +1,28 @@
+<h1 mat-dialog-title>Add Record Form</h1>
+<div mat-dialog-content>
+<form [formGroup]="studentForm">
+  <mat-form-field appearance="outline">
+    <mat-label>Roll No</mat-label>
+    <input formControlName="rollNo" matInput type="number" placeholder="">
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Name</mat-label>
+    <input formControlName="studentName" matInput type="text"  placeholder="">
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Date of birth</mat-label>
+    <input formControlName="dob" matInput [matDatepicker]="picker" readonly>
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Score</mat-label>
+    <input formControlName="score" matInput placeholder="" type="number">
+  </mat-form-field>
+  <div mat-dialog-action [align]="'end'">
+    <button mat-raised-button color="primary" (click)="addStudent()" >save</button>
+    <button style="margin-left: 16px;"mat-raised-button color="warn" mat-dialog-close >close</button>
+  </div>
+</form>
+</div>
